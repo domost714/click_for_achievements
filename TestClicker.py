@@ -4,14 +4,10 @@ from Clicker import Clicker
 
 
 class TestClicker:
-    def create_the_frame():
+    def clicking_the_button(times):
         root = Tk()
         root.title("Click for achievements!")
         root.geometry("300x50")
-        return root
-
-    def clicking_the_button(times):
-        root = TestClicker.create_the_frame()
         clicker = Clicker(root)
         for i in range(times):
             clicker.button.invoke()
@@ -19,7 +15,6 @@ class TestClicker:
         root.after(1000, lambda: root.destroy())
         root.mainloop()
         assert clicker.clicks == times
-
 
     def test_initialisation(self):
         clicker = Clicker
