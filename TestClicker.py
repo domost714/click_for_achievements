@@ -7,7 +7,7 @@ class TestClicker:
     def verify_button_after_clicking(times):
         root = Tk()
         root.title("Click for achievements!")
-        root.geometry("300x50")
+        root.geometry("250x75")
         clicker = Clicker(root)
         for i in range(times):
             clicker.button.invoke()
