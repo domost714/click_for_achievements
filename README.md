@@ -1,0 +1,1 @@
+Simple clicker GUI covered by tests
