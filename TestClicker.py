@@ -10,31 +10,26 @@ class TestClicker:
         root.geometry("300x50")
         return root
 
+    def clicking_the_button(times):
+        root = TestClicker.create_the_frame()
+        clicker = Clicker(root)
+        for i in range(times):
+            clicker.button.invoke()
+            i += 1
+        root.after(1000, lambda: root.destroy())
+        root.mainloop()
+        assert clicker.clicks == times
+
+
     def test_initialisation(self):
         clicker = Clicker
         assert clicker
 
     def test_initial_counter(self):
-        root = TestClicker.create_the_frame()
-        clicker = Clicker(root)
-        root.after(1000, lambda: root.destroy())
-        root.mainloop()
-        assert clicker.clicks == 0
+        TestClicker.clicking_the_button(0)
 
     def test_first_click_counting(self):
-        root = TestClicker.create_the_frame()
-        clicker = Clicker(root)
-        clicker.button.invoke()
-        root.after(1000, lambda: root.destroy())
-        root.mainloop()
-        assert clicker.clicks == 1
+        TestClicker.clicking_the_button(1)
 
     def test_several_clicks_counting(self):
-        root = TestClicker.create_the_frame()
-        clicker = Clicker(root)
-        for i in range(5):
-            clicker.button.invoke()
-            i += 1
-        root.after(1000, lambda: root.destroy())
-        root.mainloop()
-        assert clicker.clicks == 5
+        TestClicker.clicking_the_button(5)
