@@ -4,7 +4,7 @@ from Clicker import Clicker
 
 
 class TestClicker:
-    def clicking_the_button(times):
+    def verify_button_after_clicking(times):
         root = Tk()
         root.title("Click for achievements!")
         root.geometry("300x50")
@@ -21,10 +21,10 @@ class TestClicker:
         assert clicker
 
     def test_initial_counter(self):
-        TestClicker.clicking_the_button(0)
+        TestClicker.verify_button_after_clicking(0)
 
     def test_first_click_counting(self):
-        TestClicker.clicking_the_button(1)
+        TestClicker.verify_button_after_clicking(1)
 
     def test_several_clicks_counting(self):
-        TestClicker.clicking_the_button(5)
+        TestClicker.verify_button_after_clicking(5)
