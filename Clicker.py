@@ -16,11 +16,12 @@ class Clicker(Frame):
         self.button.grid(column=0, row=1, sticky=W, padx=5, pady=5)
 
         self.achievements = Label(self, text="Achievements:")
-        self.achievements.grid(column=1, row=0, sticky=E, padx=5, pady=5)
 
     def counter(self):
         self.clicks += 1
         self.text["text"] = "Number of cliks: " + str(self.clicks)
+        if self.clicks >= 10:
+            self.achievements.grid(column=1, row=0, sticky=E, padx=5, pady=5)
 
 
 if __name__ == "__main__":
