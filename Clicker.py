@@ -10,10 +10,10 @@ class Clicker(Frame):
 
     def create_widgets(self):
         self.text = Label(self, text="Number of clicks: 0")
-        self.text.grid(column=0, row=0, sticky=W, padx=5, pady=5)
+        self.text.grid(column=0, row=0, sticky=W)
 
         self.button = Button(text="Click here", command=self.counter)
-        self.button.grid(column=0, row=1, sticky=W, padx=5, pady=5)
+        self.button.grid(column=0, row=1, sticky=W)
 
         self.achievements = Label(self, text="Achievements:")
 
@@ -21,7 +21,7 @@ class Clicker(Frame):
         self.clicks += 1
         self.text["text"] = "Number of cliks: " + str(self.clicks)
         if self.clicks >= 10:
-            self.achievements.grid(column=1, row=0, sticky=E, padx=5, pady=5)
+            self.achievements.grid(column=1, row=0, sticky=E)
 
 
 if __name__ == "__main__":
